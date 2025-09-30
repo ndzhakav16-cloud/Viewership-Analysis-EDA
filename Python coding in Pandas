@@ -1,0 +1,71 @@
+ Import Library
+# Import the pandas libraries in oder to use pandas DataFrames
+#importnumpy as np library to enable me to code numeric data
+import pandas as pd
+import numpy as np
+
+Install Dependencies
+#Read the csv file into a pandas DataFrame
+!pip install openpyxl -q
+
+Data load
+# Read the excel  file into a pandas DataFrame
+# Loading data from excel file URL path
+import pandas as pd
+import pandas as pd
+df = pd.read_excel('/Workspace/Users/ndzhakav16@gmail.com/Viewership Analysis EDA .xlsx')
+
+# Display the pandas DataFrame(Table) for Viewership Analysis
+display(df)
+
+viewershipanalysis = df
+# Display the pandas DataFrame(Table) for Viewership Analysis
+display(viewershipanalysis)
+
+Explanotory Data Analysis (EDA) For Viewership Analysis
+# Dateset Discription
+# DateID print is a column or a variable that contain the data of the event
+# CustomerID is the column or a variable that contain a unique identifier for each customer
+# TotalTimeWatched is the column or a variable that contain the total time watched by unique customer
+# Platform is the column or a variable that contain the platform used to watch the video
+# PlayEventType is the column or a variable that contain the type of event that was played
+# VideoTitle is the column or a variable that contain the title of the video 
+
+
+# Display the columns in the pandas DataFrame for Viewership Analysis
+viewershipanalysis.columns
+
+# Counting the duplicates in the pandas DataFrame for Viewership Analysis
+viewershipanalysis.duplicated()
+
+# removing the duplicates in the pandas DataFrame for Viewership Analysis
+#Displaying the Data with no duplactes
+viewershipanalysis.drop_duplicates(inplace=True)
+viewershipanalysis.shape
+
+# counting the null values in the pandas DataFrame for Viewership Analysis
+viewershipanalysis.isnull().sum()
+
+# Displaying the first 10 rows of the pandas DataFrame for Viewership Analysis
+viewershipanalysis.head(10)
+
+# Displaying the last 10 rows of the pandas DataFrame for Viewership Analysis
+viewershipanalysis.tail(10)
+
+#Displaying the statistical summary of the pandas DataFrame for Viewership Analysis
+viewershipanalysis.describe()
+
+# displaying the data types of the pandas DataFrame for Viewership Analysis
+viewershipanalysis.dtypes
+
+# Displaying the information of the pandas DataFrame for Viewership Analysis
+viewershipanalysis.info()
+
+# Checking the number of unigue values in the column for Viewership Analysis
+viewershipanalysis['Platform'].unique(), viewershipanalysis['PlayEventType'].unique(), viewershipanalysis['VideoTitle'].unique()
+
+# Displaying the maximum total time watched for Viewership Analysis
+viewershipanalysis['TotalTimeWatched'].max()
+
+
+
