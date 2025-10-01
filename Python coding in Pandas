@@ -67,5 +67,74 @@ viewershipanalysis['Platform'].unique(), viewershipanalysis['PlayEventType'].uni
 # Displaying the maximum total time watched for Viewership Analysis
 viewershipanalysis['TotalTimeWatched'].max()
 
+# Counting distinct CustomerID values in the pandas DataFrame for Viewership Analysis 
+viewershipanalysis[viewershipanalysis['Platform'] == 'Web']['CustomerID'].nunique()
 
+# counting distinct CustomerID values in the pandas DataFrame for Viewership Analysis
+
+viewershipanalysis[viewershipanalysis['Platform'] == 'iOS']['CustomerID'].nunique()
+
+# counting distinct CustomerID values in the pandas DataFrame for Viewership Analysis
+
+viewershipanalysis[viewershipanalysis['PlayEventType'] == 'Catch Up']['CustomerID'].nunique()
+
+# Find the maximum TotalTimeWatched in the value of certain column viewershipanalysis['CustomerID'].nunique()
+
+viewershipanalysis['PlayEventType'].max()
+
+# Check for missing values percentage per column
+(viewershipanalysis.isnull().sum() / len(viewershipanalysis)) * 100
+
+# Check for unique value counts per column
+viewershipanalysis.nunique()
+
+
+# Check for value counts in categorical columns
+display(viewershipanalysis['DateID'].value_counts())
+display(viewershipanalysis['Platform'].value_counts())
+display(viewershipanalysis['PlayEventType'].value_counts())
+display(viewershipanalysis['VideoTitle'].value_counts())
+
+RESULT
+
+20201202       4
+Name: DateID, Length: 166, dtype: int64Leanback    71525
+Web         20733
+Android     11582
+iOS          4821
+Name: Platform, dtype: int64LiveTV       80438
+Catch Up     16262
+Other        11776
+Downloads      185
+Name: PlayEventType, dtype: int64Unknown                             33892
+South Africa Tonight                 1151
+Suidooster                           1145
+The Block Australia                   890
+The South African Morning             744
+                                    ...  
+Only: Big Zulu                          1
+LaLiga 20/21: R Madrid v Getafe         1
+U.S. Marshals                           1
+Aus Open WOD '21: (M) D3                1
+The Campaign Against The Climate        1
+Name: VideoTitle, Length: 8904, dtype: int64
+
+# Group by Platform and PlayEventType to see aggregate statistics
+
+display(viewershipanalysis.groupby(['Platform', 'PlayEventType'])['TotalTimeWatched'].agg(['count', 'mean', 'sum', 'max', 'min']))
+
+RESULT
+
+count	mean	sum	max	min
+3744	1260.6434294871794	4719849	19760	1
+143	1394.041958041958	199348	6240	60
+7695	1376.3684210526317	10591155	86400	1
+6041	1516.9475252441648	9163880	17890	1
+53708	2422.602051835853	130113111	88500	1
+11776	1624.0060292119565	19124295	27182	1
+5298	1744.5683276708191	9242723	18072	1
+15435	2798.7144800777455	43198158	86400	1
+1179	1472.247667514843	1735780	15186	1
+42	1674.5	70329	8520	2
+3600	1216.8344444444444	4380604	65379	1
 
