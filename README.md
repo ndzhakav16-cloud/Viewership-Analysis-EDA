@@ -16,6 +16,7 @@ i have my file in excle form my download,then i load the dataset into a Pandas D
 
 # Tech Tools Used
 
+Excel,
 Python ,
 Pandas,
 NumPy (for numerical operations)
